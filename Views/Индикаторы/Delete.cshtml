@@ -1,0 +1,51 @@
+﻿@model Compromise.Models.Индикаторы
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Индикаторы</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Тип)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Тип)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Значение)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Значение)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Контекст)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Контекст)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdКатегорииNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdКатегорииNavigation.IdКатегории)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdКритерияNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdКритерияNavigation.IdКритерия)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdОбщегоИндикатора" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

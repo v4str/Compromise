@@ -1,0 +1,48 @@
+﻿@model Compromise.Models.Индикаторы
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Индикаторы</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Тип)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Тип)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Значение)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Значение)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Контекст)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Контекст)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdКатегорииNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdКатегорииNavigation.IdКатегории)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdКритерияNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdКритерияNavigation.IdКритерия)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdОбщегоИндикатора">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

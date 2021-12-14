@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Compromise.Models.Индикаторы>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Тип)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Значение)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Контекст)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdКатегорииNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdКритерияNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Тип)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Значение)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Контекст)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdКатегорииNavigation.IdКатегории)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdКритерияNavigation.IdКритерия)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdОбщегоИндикатора">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdОбщегоИндикатора">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdОбщегоИндикатора">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+﻿@model Compromise.Models.КритерииОценкиПолученныхРезультатов
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>КритерииОценкиПолученныхРезультатов</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdКритерия" />
+            <div class="form-group">
+                <label asp-for="ПолнотаКонтекста" class="control-label"></label>
+                <input asp-for="ПолнотаКонтекста" class="form-control" />
+                <span asp-validation-for="ПолнотаКонтекста" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdСтандарта" class="control-label"></label>
+                <select asp-for="IdСтандарта" class="form-control" asp-items="ViewBag.IdСтандарта"></select>
+                <span asp-validation-for="IdСтандарта" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdПоставщика" class="control-label"></label>
+                <select asp-for="IdПоставщика" class="form-control" asp-items="ViewBag.IdПоставщика"></select>
+                <span asp-validation-for="IdПоставщика" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
